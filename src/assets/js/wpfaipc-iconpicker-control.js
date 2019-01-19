@@ -1,9 +1,7 @@
 ( function( $ ) {
 
 	$( function() {
-		$( '.wpfaipc' ).iconpicker({
-			hideOnSelect: true,
-		}).on( 'iconpickerUpdated', function() {
+		$( '.wpfaipc' ).iconpicker(wpfaipc.opt).on( 'iconpickerUpdated', function() {
 			$( this ).trigger( 'change' );
 		} );
 	} );

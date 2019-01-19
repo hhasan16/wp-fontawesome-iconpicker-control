@@ -8,13 +8,11 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'ThanksToIT\WPFAI
 
 		protected $base_url = '';
 		protected $directory_name = 'wp-fontawesome-iconpicker-control';
-		protected $iconpicker_options = array();
+		protected $iconpicker_options = array( "hideOnSelect" => true);
 
 		public function __construct( \WP_Customize_Manager $manager, $id, array $args = array() ) {
 			if ( isset( $args['options'] ) ) {
-				$this->iconpicker_options = wp_parse_args( $args['options'], array(
-					"hideOnSelect" => true
-				) );
+				$this->iconpicker_options = wp_parse_args( $args['options'], $this->iconpicker_options );
 			}
 			if ( isset( $args['directory_name'] ) ) {
 				$this->directory_name = $args['directory_name'];
