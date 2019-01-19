@@ -2,12 +2,12 @@
 
 namespace ThanksToIT\WPFAIPC;
 
-if ( class_exists( 'WP_Customize_Control' ) && !class_exists( 'ThanksToIT\WPFAIPC\IconPicker_Control' ) ) {
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'ThanksToIT\WPFAIPC\IconPicker_Control' ) ) {
 
 	class IconPicker_Control extends \WP_Customize_Control {
 
-		protected $base_url='';
-		protected $directory_name='iconpicker_control';
+		protected $base_url = '';
+		protected $directory_name = 'wp-fontawesome-iconpicker-control';
 
 		public function __construct( \WP_Customize_Manager $manager, $id, array $args = array() ) {
 			if ( isset( $args['directory_name'] ) ) {
@@ -26,15 +26,16 @@ if ( class_exists( 'WP_Customize_Control' ) && !class_exists( 'ThanksToIT\WPFAIP
 		 */
 		public function render_content() {
 			?>
-			<label>
+            <label>
 				<span class="customize-control-title">
 					<?php echo esc_html( $this->label ); ?>
 				</span>
-				<div class="input-group icp-container">
-					<input data-placement="bottomRight" class="icp icp-auto" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" type="text">
-					<span class="input-group-addon"></span>
-				</div>
-			</label>
+                <div class="input-group icp-container">
+                    <input data-placement="bottomRight" class="wpfaipc icp-auto" <?php $this->link(); ?>
+                           value="<?php echo esc_attr( $this->value() ); ?>" type="text">
+                    <span class="input-group-addon"></span>
+                </div>
+            </label>
 			<?php
 		}
 
@@ -42,10 +43,12 @@ if ( class_exists( 'WP_Customize_Control' ) && !class_exists( 'ThanksToIT\WPFAIP
 		 * Enqueue required scripts and styles.
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'tm-fontawesome-iconpicker', $this->base_url . '/assets/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
-			wp_enqueue_script( 'tm-iconpicker-control', $this->base_url . '/assets/js/iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
-			wp_enqueue_style( 'tm-fontawesome-iconpicker', $this->base_url . '/assets/css/fontawesome-iconpicker.min.css' );
-			wp_enqueue_style( 'tm-fontawesome', $this->base_url . '/assets/css/font-awesome.min.css' );
+			$itsjavi_url = $this->base_url . "../../vendor/itsjavi/fontawesome-iconpicker/dist";
+			$font_awesome_url="//use.fontawesome.com/releases/v5.5.0/css/all.css";
+			wp_enqueue_script( 'wpfaipc-fontawesome-iconpicker', $itsjavi_url . '/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'wpfaipc-iconpicker-control', $this->base_url . '/assets/js/wpfaipc-iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_style( 'wpfaipc-fontawesome-iconpicker', $itsjavi_url . '/css/fontawesome-iconpicker.min.css' );
+			wp_enqueue_style( 'wpfaipc-fontawesome', $font_awesome_url );
 		}
 
 	}
