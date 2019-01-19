@@ -7,3 +7,6 @@
     top: 4px;
     z-index: 2;
 }
+.iconpicker-popover.popover{
+    position:static;
+}
