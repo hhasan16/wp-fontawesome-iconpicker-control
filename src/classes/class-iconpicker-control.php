@@ -48,7 +48,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'ThanksToIT\WPFAI
 			$font_awesome_url="//use.fontawesome.com/releases/v5.5.0/css/all.css";
 			wp_enqueue_script( 'wpfaipc-fontawesome-iconpicker', $itsjavi_url . '/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_script( 'wpfaipc-iconpicker-control', $this->base_url . '/assets/js/wpfaipc-iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
-			wp_enqueue_script( 'wpfaipc-iconpicker-control', $this->base_url . '/assets/css/wpfaipc-iconpicker-control.css', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_style( 'wpfaipc-iconpicker-control', $this->base_url . '/assets/css/wpfaipc-iconpicker-control.css', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_style( 'wpfaipc-fontawesome-iconpicker', $itsjavi_url . '/css/fontawesome-iconpicker.min.css' );
 			wp_enqueue_style( 'wpfaipc-fontawesome', $font_awesome_url );
 		}
