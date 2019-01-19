@@ -1,9 +1,9 @@
-( function( $ ) {
+(function ($) {
 
-	$( function() {
-		$( '.wpfaipc' ).iconpicker(wpfaipc.opt).on( 'iconpickerUpdated', function() {
-			$( this ).trigger( 'change' );
-		} );
-	} );
+	$(function () {
+		$('.wpfaipc').iconpicker(wpfaipc.opt).on('iconpickerUpdated', function () {
+			$(this).trigger('change');
+		});
+	});
 
-} )( jQuery );
+})(jQuery);
