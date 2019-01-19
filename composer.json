@@ -21,8 +21,7 @@
   "require": {
     "php": ">=5.3.2",
     "composer/installers": ">=v1.2.0",
-    "itsjavi/fontawesome-iconpicker":"dev-master",
-
+    "itsjavi/fontawesome-iconpicker":"dev-master"
   },
   "extra": {
     "installer-paths": {
