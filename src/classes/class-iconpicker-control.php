@@ -18,6 +18,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'ThanksToIT\WPFAI
 			} else {
 				$this->base_url = plugin_dir_url( __FILE__ );
 			}
+			$this->base_url .= "../";
 			parent::__construct( $manager, $id, $args );
 		}
 
@@ -43,7 +44,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'ThanksToIT\WPFAI
 		 * Enqueue required scripts and styles.
 		 */
 		public function enqueue() {
-			$itsjavi_url = $this->base_url . "../../vendor/itsjavi/fontawesome-iconpicker/dist";
+			$itsjavi_url = $this->base_url . "../vendor/itsjavi/fontawesome-iconpicker/dist";
 			$font_awesome_url="//use.fontawesome.com/releases/v5.5.0/css/all.css";
 			wp_enqueue_script( 'wpfaipc-fontawesome-iconpicker', $itsjavi_url . '/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_script( 'wpfaipc-iconpicker-control', $this->base_url . '/assets/js/wpfaipc-iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
